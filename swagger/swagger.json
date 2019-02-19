@@ -1,0 +1,69 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v1",
+		"title": "Energy Australia Coding Test API"
+	},
+	"basePath": "/",
+	"paths": {
+		"/api/v1/cars": {
+			"get": {
+				"tags": [
+					"cars"
+				],
+				"operationId": "APICarsGet",
+				"consumes": [],
+				"produces": [
+					"text/plain",
+					"application/json",
+					"text/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Success",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/CarShow"
+							}
+						}
+					},
+					"400": {
+						"description": "Error",
+						"schema": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"CarShow": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"cars": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Car"
+					}
+				}
+			}
+		},
+		"Car": {
+			"type": "object",
+			"properties": {
+				"make": {
+					"type": "string"
+				},
+				"model": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"securityDefinitions": {}
+}

@@ -1,0 +1,40 @@
+{
+  "name": "ea-coding-test",
+  "version": "1.0.0",
+  "description": "EnergyAustralia Coding Test",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mboudreau/ea-coding-test.git"
+  },
+  "author": "Michel Boudreau <michelboudreau@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mboudreau/ea-coding-test/issues"
+  },
+  "homepage": "https://github.com/mboudreau/ea-coding-test#readme",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "caporal": "^1.1.0",
+    "lodash": "^4.17.11",
+    "request": "^2.88.0",
+    "ts-node": "^7.0.1"
+  },
+  "scripts": {
+    "generate": "",
+    "test": "mocha -r ts-node/register -R mocha-unfunk-reporter -t 15000 -s 5000 -b --check-leaks --exit \"src/**/*.spec.ts\""
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.25",
+    "@types/request": "^2.48.1",
+    "@types/chai": "^4.1.7",
+    "@types/lodash": "^4.14.121",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "mocha-unfunk-reporter": "^0.4.0",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.2.4"
+  }
+}
