@@ -138,8 +138,8 @@ class ObjectSerializer {
 }
 
 export class Car {
-	'make': string;
-	'model': string;
+	'make'?: string;
+	'model'?: string;
 
 	static discriminator: string | undefined = undefined;
 
@@ -161,8 +161,8 @@ export class Car {
 }
 
 export class CarShow {
-	'name': string;
-	'cars': Array<Car>;
+	'name'?: string;
+	'cars'?: Array<Car>;
 
 	static discriminator: string | undefined = undefined;
 
