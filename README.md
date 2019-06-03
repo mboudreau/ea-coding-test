@@ -20,7 +20,7 @@ As a retrospective, I'm not particularly happy with how the code ended because i
 
 ### API
 
-I've decided to generate the typescript API (`swagger/api.ts`) based on the swagger.json that I could find within the javascript for the coding site (saved to `swagger/swagger.json`) instead of creating my own service as this would be closer to the 'truth'.  This could easily be regenerated automatically based on the swagger.json when it gets updated, but I didn't get the time to add this functionality in.
+I've decided to [generate the typescript API](http://editor.swagger.io/) (`swagger/api.ts`) based on the swagger.json that I could find within the javascript for the coding site (saved to `swagger/swagger.json`) instead of creating my own service as this would be closer to the 'truth'.  This could easily be regenerated automatically based on the swagger.json when it gets updated, but I didn't get the time to add this functionality in.
 
 ### Tests
 
