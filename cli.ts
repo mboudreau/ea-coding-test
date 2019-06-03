@@ -1,32 +1,32 @@
 import * as cli from "caporal";
-import cars from "./src/cars";
+import cars from "./src/festivals";
 const pkg = require("./package.json");
 
 cli
-	.name("cars")
-	.bin("cars")
-	.description("EA Coding Test - Car program")
+	.name("bands")
+	.bin("bands")
+	.description("EA Coding Test - Festivals program")
 	.version(pkg.version);
 
 cli
-	.command("list", "List cars by model, alphabetically, showing which event it attended")
+	.command("list", "List bands by record label, alphabetically, showing which event it attended")
 	.action(() => {
-		cars.groupByMakeAlphabetical().then((makes) => {
-				if(makes.length === 0) {
-					console.log("No cars returned, please try again later.");
+		cars.groupByRecordLabelAlphabetical().then((recordLabels) => {
+				if(recordLabels.length === 0) {
+					console.log("No bands returned, please try again later.");
 					return;
 				}
 
-				console.log("Listing via car Make, alphabetically sorted: ");
-				makes.forEach((make) => {
-					console.log(`${make.name}`);
-					for (let model in make.models) {
-						console.log(`\t${model}`);
-						make.models[model].forEach((show) => console.log(`\t\t${show}`));
+				console.log("Listing via band record label, alphabetically sorted: ");
+				recordLabels.forEach((recordLabel) => {
+					console.log(`${recordLabel.name}`);
+					for (let band in recordLabel.bands) {
+						console.log(`\t${band}`);
+						recordLabel.bands[band].forEach((festival) => console.log(`\t\t${festival}`));
 					}
 				})
 			},
-			(err:string) => console.error(`Cannot list cars, please try again later: ${err}`)
+			(err:string) => console.error(`Cannot list bands, please try again later: ${err}`)
 		);
 	});
 

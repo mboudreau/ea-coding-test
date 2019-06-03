@@ -6,12 +6,12 @@
 	},
 	"basePath": "/",
 	"paths": {
-		"/api/v1/cars": {
+		"/api/v1/festivals": {
 			"get": {
 				"tags": [
-					"cars"
+					"festivals"
 				],
-				"operationId": "APICarsGet",
+				"operationId": "APIFestivalsGet",
 				"consumes": [],
 				"produces": [
 					"text/plain",
@@ -24,12 +24,12 @@
 						"schema": {
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/CarShow"
+								"$ref": "#/definitions/MusicFestival"
 							}
 						}
 					},
-					"400": {
-						"description": "Error",
+					"429": {
+						"description": "Throttled",
 						"schema": {
 							"type": "string"
 						}
@@ -39,27 +39,27 @@
 		}
 	},
 	"definitions": {
-		"CarShow": {
+		"MusicFestival": {
 			"type": "object",
 			"properties": {
 				"name": {
 					"type": "string"
 				},
-				"cars": {
+				"bands": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Car"
+						"$ref": "#/definitions/Band"
 					}
 				}
 			}
 		},
-		"Car": {
+		"Band": {
 			"type": "object",
 			"properties": {
-				"make": {
+				"name": {
 					"type": "string"
 				},
-				"model": {
+				"recordLabel": {
 					"type": "string"
 				}
 			}
